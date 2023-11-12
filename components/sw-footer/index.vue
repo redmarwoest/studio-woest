@@ -17,7 +17,7 @@
     </div>
     <div class="sw-footer__information">
       <div class="sw-footer__location">
-        <div id="hourglass"><img src="icons/sw-bolt-small.svg" alt="" /></div>
+        <!-- <div id="hourglass"><img src="icons/sw-bolt-small.svg" alt="" /></div> -->
         <h4>Current Project</h4>
         <h6>Vendroid</h6>
         <h6>Branding | Custom development</h6>
