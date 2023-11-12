@@ -6,5 +6,8 @@ export default defineNuxtConfig({
     plugins: [glsl()],
     mode: "client",
   },
-  css: ["~/assets/font.css"],
+  css: ["~/assets/scss/font.scss"],
+  build: {
+    transpile: ["gsap-trial"],
+  },
 });

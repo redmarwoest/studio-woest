@@ -6,10 +6,10 @@ import vertexShader from "../shaders/vertex.glsl";
 import Sizes from "./utils/sizes";
 
 const colors = [
-  ["#000000", "#6C6C6C", "#222222", "#444444", "#666666"],
-  ["#000000", "#6C6C6C", "#222222", "#444444", "#666666"],
-  ["#000000", "#6C6C6C", "#222222", "#444444", "#666666"],
-  ["#000000", "#6C6C6C", "#222222", "#444444", "#666666"],
+  ["#C351FF", "#FF9772", "#FF51C3", "#44006F", "#C6C2F3"],
+  ["#C351FF", "#FF9772", "#FF51C3", "#44006F", "#C6C2F3"],
+  ["#C351FF", "#FF9772", "#FF51C3", "#44006F", "#C6C2F3"],
+  ["#C351FF", "#FF9772", "#FF51C3", "#44006F", "#C6C2F3"],
 ];
 
 let ind = Math.floor(Math.random() * colors.length);
@@ -77,7 +77,7 @@ class WebGL {
   }
 
   render() {
-    this.time += 0.0001;
+    this.time += 0.00015;
     this.planeMaterial.uniforms.time.value = this.time;
 
     requestAnimationFrame(this.render.bind(this));
