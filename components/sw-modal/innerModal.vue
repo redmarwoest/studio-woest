@@ -34,9 +34,8 @@
             >
               <span class="sw-modal__content--submit-btn--span" v-if="!loading">
                 Contact studio woest
-                <!-- <img src="icons/sw-arrow-small.svg" alt="" -->
-                /></span
-              >
+                <img src="icons/sw-arrow-small.svg" alt=""
+              /></span>
               <span v-else>Loading...</span>
             </button>
             <div v-if="error" class="error-message">
