@@ -36,10 +36,6 @@
 import innerModal from "../sw-modal/innerModal.vue";
 
 import useModalStore from "../../stores/useModalStore";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const store = useModalStore();
 
