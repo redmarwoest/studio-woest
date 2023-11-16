@@ -1,6 +1,6 @@
 <template>
   <div class="sw-footer-background">
-    <sw-component-three-background />
+    <!-- <sw-component-three-background /> -->
   </div>
   <div class="sw-footer">
     <div class="sw-footer__logo">
