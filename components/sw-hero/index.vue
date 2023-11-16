@@ -36,9 +36,9 @@
                   ><span>r</span><span>i</span>
                   <span class="three-animation">
                     <span class="three-animation__letter">e</span>
-                    <span class="three-animation__3d"
+                    <!-- <span class="three-animation__3d"
                       ><sw-component-three-block
-                    /></span>
+                    /></span> -->
                   </span>
                   <span class="n">n</span><span>c</span><span>e</span
                   ><span>s</span>
