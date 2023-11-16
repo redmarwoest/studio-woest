@@ -9,7 +9,7 @@
     <div class="sw-footer__contact">
       <h6>Availiability from the 1st of February</h6>
       <div class="sw-footer__contact--link">
-        <a href="">
+        <a @click="openModal">
           <h2>Get in contact</h2>
           <h2>Get in contact</h2>
         </a>
@@ -26,36 +26,46 @@
         <div id="hourglass"></div>
         <h4>Current Location</h4>
         <h6>Tamarindo | Costa Rica</h6>
-        <h6>{{ currentDateTime }}</h6>
+        <!-- <h6>{{ currentDateTime }}</h6> -->
       </div>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      currentDateTime: this.getCurrentDateTime(),
-    };
-  },
-  methods: {
-    getCurrentDateTime() {
-      const options = {
-        timeZone: "America/Costa_Rica", // Set the time zone to Costa Rica
-        weekday: "long",
-        year: "numeric",
-        month: "short", // Use abbreviated month name
-        day: "numeric",
-        hour: "numeric",
-        minute: "numeric",
-      };
+<script setup>
+import innerModal from "../sw-modal/innerModal.vue";
 
-      const dateTimeFormat = new Intl.DateTimeFormat("en-US", options);
-      return dateTimeFormat.format(new Date());
-    },
-  },
+import useModalStore from "../../stores/useModalStore";
+
+const store = useModalStore();
+
+const openModal = () => {
+  store.openModal({ component: innerModal });
 };
+
+// export default {
+//   data() {
+//     return {
+//       currentDateTime: this.getCurrentDateTime(),
+//     };
+//   },
+//   methods: {
+//     getCurrentDateTime() {
+//       const options = {
+//         timeZone: "America/Costa_Rica", // Set the time zone to Costa Rica
+//         weekday: "long",
+//         year: "numeric",
+//         month: "short", // Use abbreviated month name
+//         day: "numeric",
+//         hour: "numeric",
+//         minute: "numeric",
+//       };
+
+//       const dateTimeFormat = new Intl.DateTimeFormat("en-US", options);
+//       return dateTimeFormat.format(new Date());
+//     },
+//   },
+// };
 </script>
 
 <style lang="scss">

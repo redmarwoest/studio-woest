@@ -40,10 +40,14 @@ h1 {
   line-height: 120px;
   margin: 0;
 
-  @media (max-width: 480px) {
-    font-size: 60px;
+  @media (max-width: 1024px) {
+    font-size: 90px;
+    line-height: 90px;
+  }
 
-    line-height: 60px;
+  @media (max-width: 480px) {
+    font-size: 54px;
+    line-height: 54px;
   }
 }
 
@@ -103,6 +107,51 @@ p {
   margin: 0;
 }
 
+.p {
+  font-family: "Matter-Medium";
+  font-size: 24px;
+  color: #fefce4;
+  margin: 0;
+  line-height: 36px;
+}
+
 .bold {
   font-family: "Matter-Bold";
+}
+
+input {
+  background: none;
+  border: none;
+  border-bottom: solid 1px #fefce4;
+  font-family: "Matter-Regular";
+  font-size: 24px;
+  color: #fefce4;
+  margin: 0;
+  line-height: 36px;
+
+  &:focus {
+    border: none;
+  }
+
+  &::-webkit-input-placeholder {
+    color: #fefce4;
+    opacity: 0.5;
+    font-size: 24px;
+    font-family: "Matter-Regular";
+  }
+}
+
+button {
+  height: 48px;
+  padding-left: 16px;
+  padding-right: 16px;
+  font-family: "Matter-SemiBold";
+  font-size: 14px;
+  color: #fefce4;
+  margin: 0;
+  background-color: transparent;
+  border-radius: 50px;
+  border: solid 1px white;
+  letter-spacing: 0.5px;
+  cursor: pointer;
 }

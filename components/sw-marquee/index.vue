@@ -1,5 +1,5 @@
 <template>
-  <div class="marquee scroll">
+  <div @click="openModal" class="marquee scroll">
     <ul class="marquee__content">
       <li>
         <h5>AVAILABILITY FROM THE 1ST OF FEBRUARY</h5>
@@ -32,7 +32,17 @@
   </div>
 </template>
 
-<script></script>
+<script setup>
+import innerModal from "../sw-modal/innerModal.vue";
+
+import useModalStore from "../../stores/useModalStore";
+
+const store = useModalStore();
+
+const openModal = () => {
+  store.openModal({ component: innerModal });
+};
+</script>
 
 <style lang="scss">
 .marquee {
@@ -43,6 +53,11 @@
   gap: var(--gap);
   height: 46px;
   border-bottom: 1px solid #fefce4;
+  cursor: pointer;
+
+  &:hover .marquee__content {
+    animation-play-state: paused;
+  }
 }
 
 li {
@@ -53,10 +68,16 @@ li {
       display: none;
     }
   }
+
+  @media (max-width: 1000px) {
+    &:nth-child(-n + 2) {
+      display: none;
+    }
+  }
 }
 
 .marquee__content {
-  animation: scroll 30s linear infinite;
+  animation: scroll 45s linear infinite;
   flex-shrink: 0;
   display: flex;
   justify-content: space-around;

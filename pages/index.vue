@@ -2,7 +2,7 @@
   <div ref="{main}">
     <sw-marquee />
     <sw-hero />
-    <sw-brand-grid />
+    <sw-grid />
     <sw-review />
     <sw-footer />
   </div>

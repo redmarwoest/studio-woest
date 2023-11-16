@@ -10,4 +10,8 @@ export default defineNuxtConfig({
   build: {
     transpile: ["gsap-trial"],
   },
+  modules: ["@pinia/nuxt"],
+  imports: {
+    dirs: ["store", "utils"],
+  },
 });

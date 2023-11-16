@@ -16,8 +16,9 @@
 </template>
 <script>
 import { onMounted, onUnmounted, onUpdated, ref } from "vue";
-import gsap from "gsap-trial";
-import { ScrollTrigger } from "gsap-trial/ScrollTrigger";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SplitType from "split-type";
 
 if (typeof window !== "undefined") {
   gsap.config({
@@ -35,6 +36,23 @@ export default {
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
     this.handleScroll();
+    const splitTypes = document.querySelectorAll(".sw-review__content--text");
+    splitTypes.forEach((char, i) => {
+      const text = new SplitType(char, { types: "chars,words" });
+      console.log(text);
+
+      gsap.from(text.chars, {
+        scrollTrigger: {
+          trigger: char,
+          start: "top 80%",
+          end: "top 20%",
+          scrub: true,
+          markers: false,
+        },
+        opacity: 0.2,
+        stagger: 0.1,
+      });
+    });
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.handleScroll);
@@ -58,7 +76,7 @@ export default {
 
         ScrollTrigger.create({
           trigger: ".sw-review",
-          start: "bottom 50%",
+          start: "bottom 30%",
           onEnter: () => {
             gsap.to(".sw-review__overlay", {
               width: "96%",
@@ -78,7 +96,6 @@ export default {
     });
 
     onUpdated(() => {
-      // Update the trigger when the component is updated
       ScrollTrigger.refresh();
     });
 

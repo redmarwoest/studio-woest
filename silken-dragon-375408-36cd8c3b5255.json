@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "silken-dragon-375408",
+  "private_key_id": "36cd8c3b525585d3a739c5aa88d714ac6830e294",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCscKUpvhQ2IXcq\neLjM3vRmKrobUllg+2GZhoiHdUsq9+L3QsHmRP2WdCPI3RbxwM+uPOKeA7U5/Zie\nGzmqQ5z0JRAMIaXPfjeL+3Zhdwn6vzMYL2OU4l8QMhkFoWcDiUTaQ4BFJibiMqK8\nLmsKm98kha8xF29tEaYDJOwgT7dY0B42xT723q/+y5fd9bo9542jvrWyWokXYacV\nlXPKSlpF0xyGZVFqC7l7rC3dtUUiTvMEUFpsLwkryo38NNQ5H6iZJDiLHpoh1o5e\nyDaeS9DaO1nXnE0w/shRiIF7Tb46jzTWCyw9+5ah2iSGLrV64tj2jcS7VHIP6xdq\n+yY0UVvzAgMBAAECggEAEcFXgEDOG/S+LGVZwd6DE7H6j62e/llj50bu7+On5bi4\nafU5udgItGEo/hmlrybHO42RV+vR0TLHcCAlg96KXqkiSd19ESxR09wEiGyVXngp\nbqgSfNYCK8y8vtOro7WSnVat8nDHOCs2jmHJK8J4623IaCmdk4FpspEurvUGT+KS\nn3mAMSiS/Rr/xvfq77g+6uwNDdCePi8PeLnyTZ1EmjBzqtr3SczaMMPR98uqxbDA\nKC1CLGpfzsp+uu59GepUuc221nOdn8ie/RwsSuyQCODEA/NCro0wW2r8M7HkqJOi\nwJs0ZKqzErLs2X6JITLF8lxnAU27OQ94ZJO1iSCHgQKBgQDfuA+Z7dovvvezR9l4\njyY83RFOitqpRCvvz/c/EMtqCiT4tRNTa/TqthI+BKtxTJqejIFBHW+dk/sCEYUa\nU7o79QRoeXEdgr0/7BTTNH/5QlVQO9N0QWyYVKF6NqxP77k20xriXmJGMBKdtUoM\n3673Jb6lrtNqLZw2FsZ2hlSSkQKBgQDFUmTtUYY9kWSgrhkmOtmlopmtMP8JmfN9\nnZQTW0a1El1W1NzCyA+tBbb4Dosr8wKP6xWSpJ3gF37pCUsdlGJKCY0zAL2RvMGk\nbILGihYWNf2GUZtf7GOkWynP7g3q75+xENNEQ3vihn4/yB12/poKl9BvaTHMSumb\n04Thkr8AQwKBgQDHbXeS2yG1kEGUsobc3pbSiKql3kefviKAi122/UynQVXF0vzg\nT4srM5S9bkI6JHRsw4lxN0FJMiH+rQl+94Y7bmY4j5FTIjl74wKJZ/Jwiz4r4LjV\nmICqpj6wCE7Aj00G31bG1iY6tR3TMklJgpigvifd4COcMf5fhRvzijmX0QKBgAQb\nVuZpj/WwFPwTI4rcJrN/0tr77hLxFVRD91T/zVTvcOnhvEaBi3H6cHhxNQxRHniI\nWAaZTn/ffVC0VM/kyrbnw/yPw2JJH26go4gmT5dewEwPXsB8VwaQryoYtklxe01g\nIEWHcgig6/e/3n0fh205A6mN8u9hj8Mif92CBF+pAoGBAIasGTfzb02hhODqJm/h\npLLj4rM7+YEYtN/foaUHvx+NokMg2sEhIntJRQx66MDiZ708TjHSqUwF26YnCroP\n5IAyohsweB7EfNm1+ikXtL8oGlSXEQO1HHCItQAfGEJtM9Koi1fHuihGMGPxgXZ4\nake9zXKgMeuNPpyesuqItBhZ\n-----END PRIVATE KEY-----\n",
+  "client_email": "studio-woest@silken-dragon-375408.iam.gserviceaccount.com",
+  "client_id": "110935885266868126222",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/studio-woest%40silken-dragon-375408.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
