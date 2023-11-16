@@ -1,7 +1,7 @@
 import * as THREE from "three";
 
-// import fragmentShader from "../shaders/fragment.glsl";
-// import vertexShader from "../shaders/vertex.glsl";
+import fragmentShader from "../shaders/fragment.glsl";
+import vertexShader from "../shaders/vertex.glsl";
 
 import Sizes from "./utils/sizes";
 
@@ -64,8 +64,8 @@ class WebGL {
     this.planeGeometry = new THREE.PlaneGeometry(4, 4, 600, 600);
     this.planeMaterial = new THREE.ShaderMaterial({
       side: THREE.DoubleSide,
-      // fragmentShader: fragmentShader,
-      // vertexShader: vertexShader,
+      fragmentShader: fragmentShader,
+      vertexShader: vertexShader,
     });
 
     this.planeMesh = new THREE.Mesh(this.planeGeometry, this.planeMaterial);

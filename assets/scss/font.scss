@@ -48,6 +48,7 @@ h1 {
   @media (max-width: 480px) {
     font-size: 54px;
     line-height: 54px;
+    font-family: "Matter-Regular";
   }
 }
 
@@ -62,6 +63,7 @@ h2 {
   @media (max-width: 480px) {
     font-size: 32px;
     line-height: 32px;
+    font-family: "Matter-Regular";
   }
 }
 
@@ -74,6 +76,7 @@ h3 {
 
   @media (max-width: 480px) {
     font-size: 28px;
+    font-family: "Matter-Regular";
   }
 }
 
@@ -83,6 +86,10 @@ h4 {
   letter-spacing: 0.5px;
   color: #fefce4;
   margin: 0;
+
+  @media (max-width: 480px) {
+    font-family: "Matter-Regular";
+  }
 }
 
 h5 {
@@ -90,6 +97,10 @@ h5 {
   font-size: 14px;
   color: #fefce4;
   margin: 0;
+
+  @media (max-width: 480px) {
+    font-family: "Matter-Regular";
+  }
 }
 
 h6 {
@@ -105,6 +116,10 @@ p {
   font-size: 14px;
   color: #fefce4;
   margin: 0;
+
+  @media (max-width: 480px) {
+    font-family: "Matter-Regular";
+  }
 }
 
 .p {
@@ -113,6 +128,9 @@ p {
   color: #fefce4;
   margin: 0;
   line-height: 36px;
+  @media (max-width: 480px) {
+    font-family: "Matter-Regular";
+  }
 }
 
 .bold {
