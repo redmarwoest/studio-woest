@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <canvas id="canvas" ref="canvas"></canvas>
 </template>
 
@@ -12,4 +12,4 @@ onMounted(() => {
 });
 </script>
 
-<style scoped></style>
+<style scoped></style> -->
