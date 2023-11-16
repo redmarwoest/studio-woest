@@ -1,4 +1,14 @@
 @font-face {
+  font-family: "Helvetica-Bold";
+  src: url(~/assets/font/Helvetica-Bold.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Helvetica-Regular";
+  src: url(~/assets/font/Helvetica.woff) format("woff");
+}
+
+@font-face {
   font-family: "Matter-Regular";
   src: url(~/assets/font/Matter-Regular.woff) format("woff");
 }
@@ -48,7 +58,7 @@ h1 {
   @media (max-width: 480px) {
     font-size: 54px;
     line-height: 54px;
-    font-family: "Matter-Regular";
+    font-family: "Helvetica-Bold";
   }
 }
 
@@ -63,7 +73,7 @@ h2 {
   @media (max-width: 480px) {
     font-size: 32px;
     line-height: 32px;
-    font-family: "Matter-Regular";
+    font-family: "Helvetica-Bold";
   }
 }
 
@@ -76,7 +86,7 @@ h3 {
 
   @media (max-width: 480px) {
     font-size: 28px;
-    font-family: "Matter-Regular";
+    font-family: "Helvetica-Regular";
   }
 }
 
@@ -88,7 +98,7 @@ h4 {
   margin: 0;
 
   @media (max-width: 480px) {
-    font-family: "Matter-Regular";
+    font-family: "Helvetica-Regular";
   }
 }
 
@@ -99,7 +109,7 @@ h5 {
   margin: 0;
 
   @media (max-width: 480px) {
-    font-family: "Matter-Regular";
+    font-family: "Helvetica-Regular";
   }
 }
 
@@ -109,6 +119,10 @@ h6 {
   color: #fefce4;
   letter-spacing: 0.8px;
   margin: 0;
+
+  @media (max-width: 480px) {
+    font-family: "Helvetica-Regular";
+  }
 }
 
 p {
@@ -118,7 +132,7 @@ p {
   margin: 0;
 
   @media (max-width: 480px) {
-    font-family: "Matter-Regular";
+    font-family: "Helvetica-Regular";
   }
 }
 
@@ -129,12 +143,8 @@ p {
   margin: 0;
   line-height: 36px;
   @media (max-width: 480px) {
-    font-family: "Matter-Regular";
+    font-family: "Helvetica-Regular";
   }
-}
-
-.bold {
-  font-family: "Matter-Bold";
 }
 
 input {
@@ -146,6 +156,9 @@ input {
   color: #fefce4;
   margin: 0;
   line-height: 36px;
+  @media (max-width: 480px) {
+    font-family: "Helvetica-Regular";
+  }
 
   &:focus {
     border: none;
@@ -156,6 +169,9 @@ input {
     opacity: 0.5;
     font-size: 24px;
     font-family: "Matter-Regular";
+    @media (max-width: 480px) {
+      font-family: "Helvetica-Regular";
+    }
   }
 }
 
@@ -172,4 +188,7 @@ button {
   border: solid 1px white;
   letter-spacing: 0.5px;
   cursor: pointer;
+  @media (max-width: 480px) {
+    font-family: "Helvetica-Regular";
+  }
 }
