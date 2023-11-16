@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import WebGL from "../../../class/three/webGL";
+import WebGL from "../../class/three/webGL";
 
 const canvas: { value: any | null } = ref(null);
 

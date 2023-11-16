@@ -83,8 +83,9 @@ li {
   justify-content: space-around;
   width: 100%;
   gap: var(--gap);
+  padding-left: 0px;
+  padding-right: 0px;
 }
-
 @keyframes scroll {
   from {
     transform: translateX(0);

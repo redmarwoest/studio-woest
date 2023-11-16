@@ -10,7 +10,7 @@ class Sizes extends THREE.EventDispatcher {
     super();
 
     this.width = window.innerWidth;
-    this.height = window.innerHeight * 2;
+    this.height = window.innerHeight * 1.9;
     this.pixelRatio = Math.min(window.devicePixelRatio, 1);
     this.aspect = this.width / this.height;
 
@@ -20,7 +20,7 @@ class Sizes extends THREE.EventDispatcher {
   setEvents = () => {
     window.addEventListener("resize", () => {
       this.width = window.innerWidth;
-      this.height = window.innerHeight * 2;
+      this.height = window.innerHeight * 1.9;
       this.pixelRatio = Math.min(window.devicePixelRatio, 1);
       this.aspect = this.width / this.height;
 

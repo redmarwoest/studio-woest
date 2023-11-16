@@ -139,7 +139,7 @@
         height: 90px;
       }
 
-      @media (max-width: 420px) {
+      @media (max-width: 480px) {
         height: 58px;
       }
 
@@ -161,6 +161,9 @@
   align-items: center;
   justify-content: center;
 
+  @media (min-height: 768px) and (max-width: 480px) {
+    height: 75vh;
+  }
   &__content {
     width: 90%;
     max-width: 1000px;
@@ -213,7 +216,7 @@ export default {
     tl.to(".sw-hero__content--animation div", {
       y: 0,
       stagger: 0.1,
-      delay: 0.5,
+      delay: 2.6,
       duration: 0.15,
     })
       .to(".text-animation__sentence--word div", {

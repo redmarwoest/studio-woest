@@ -35,6 +35,7 @@ onMounted(() => {
     },
     {
       clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)",
+      delay: 0.3,
       duration: 0.4,
     }
   );
@@ -42,7 +43,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="sw-loader--underlay"></div>
+  <div class="sw-loader--underlay">
+    <img src="/icons/sw-logo-normal.svg" alt="" />
+  </div>
   <div class="sw-loader">
     <div class="sw-loader__content">
       <span>{{ percentage }}%</span>
@@ -57,10 +60,13 @@ onMounted(() => {
   position: fixed;
   inset: 0;
   display: flex;
-  align-item: flex-end;
-  justify-content: start;
+  align-items: center;
+  justify-content: center;
   z-index: 3;
-  background-color: #bc4f00;
+  background-color: #2e2a57;
+  img {
+    width: 200px;
+  }
 }
 
 .sw-loader {
@@ -69,7 +75,7 @@ onMounted(() => {
   position: fixed;
   inset: 0;
   display: flex;
-  align-item: flex-end;
+  align-items: flex-end;
   justify-content: start;
   z-index: 4;
   background-color: #433e74;

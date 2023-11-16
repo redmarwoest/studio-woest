@@ -1,5 +1,5 @@
 <template>
-  <div ref="main" class="sw-review">
+  <div class="sw-review">
     <div class="sw-review__overlay">
       <div class="sw-review__content">
         <h3 class="sw-review__content--text">
@@ -15,31 +15,25 @@
   </div>
 </template>
 <script>
-import { onMounted, onUnmounted, onUpdated, ref } from "vue";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 
-if (typeof window !== "undefined") {
-  gsap.config({
-    trialWarn: false,
-  });
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 export default {
-  data() {
-    return {
-      isScrolled: false,
-    };
-  },
   mounted() {
-    window.addEventListener("scroll", this.handleScroll);
-    this.handleScroll();
+    const overlay = document.querySelector(".sw-review__overlay");
+
+    gsap.to(overlay, {
+      scrollTrigger: {
+        trigger: ".sw-review",
+        start: "bottom 80%",
+        scrub: true,
+      },
+      width: "96%",
+      borderRadius: "40px",
+    });
+
     const splitTypes = document.querySelectorAll(".sw-review__content--text");
     splitTypes.forEach((char, i) => {
       const text = new SplitType(char, { types: "chars,words" });
-      console.log(text);
 
       gsap.from(text.chars, {
         scrollTrigger: {
@@ -50,60 +44,9 @@ export default {
           markers: false,
         },
         opacity: 0.2,
-        stagger: 0.1,
+        stagger: 0.4,
       });
     });
-  },
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.handleScroll);
-  },
-  methods: {
-    handleScroll() {
-      const scrollThreshold = 100;
-      this.isScrolled = window.scrollY > scrollThreshold;
-      if (window.scrollY === 0) {
-        this.isScrolled = false;
-      }
-    },
-  },
-  setup() {
-    const main = ref();
-    let ctx;
-
-    onMounted(() => {
-      ctx = gsap.context(() => {
-        gsap.set(".sw-review__overlay", { width: "100%", borderRadius: "0px" });
-
-        ScrollTrigger.create({
-          trigger: ".sw-review",
-          start: "bottom 30%",
-          onEnter: () => {
-            gsap.to(".sw-review__overlay", {
-              width: "96%",
-              borderRadius: "72px",
-              duration: 0.5,
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(".sw-review__overlay", {
-              width: "100%",
-              borderRadius: "0px",
-              duration: 0.5,
-            });
-          },
-        });
-      }, main.value);
-    });
-
-    onUpdated(() => {
-      ScrollTrigger.refresh();
-    });
-
-    onUnmounted(() => {
-      ctx.revert();
-    });
-
-    return { main };
   },
 };
 </script>
@@ -120,6 +63,7 @@ export default {
 
   &__overlay {
     height: 100vh;
+    width: 100%;
     background-color: #111;
     display: flex;
     align-items: center;

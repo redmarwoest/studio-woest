@@ -1,5 +1,5 @@
 <template>
-  <!-- <sw-loader /> -->
+  <sw-loader />
   <sw-modal />
   <div ref="{main}">
     <div id="smooth-content">
