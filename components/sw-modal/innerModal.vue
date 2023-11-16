@@ -2,8 +2,11 @@
   <div class="sw-modal">
     <div class="sw-modal__inner">
       <button @click="store.closeModal" class="sw-modal__close-btn">
-        <span></span>
-        <span></span>
+        <img
+          class="sw-modal__close-btn--img"
+          src="/icons/sw-cross-small.svg"
+          alt=""
+        />
       </button>
       <div class="sw-modal__content">
         <h2 class="sw-modal__content--title">Tell us about your project</h2>
@@ -11,21 +14,23 @@
           <div v-if="!success">
             <p class="p">
               Hi my name is
-              <input v-model="nameInput" placeholder="John doe" type="text" />.
+              <input v-model="nameInput" placeholder="John Doe" type="text" />
+              <br />
               You can answer me on this email
               <input
                 v-model="emailInput"
                 placeholder="johndoe@gmail.com"
                 type="email"
-              />. I am looking for help with
+              />
+              <br />I am looking for help with
               <input
                 v-model="inquiryInput"
-                placeholder="Webdev, branding etc."
+                placeholder="webdev, branding etc."
                 type="text"
-              />. My budget is $
+              /><br />My budget is €
               <input v-model="moneyInput" placeholder="2500,00" type="text" />
-              and i need it done by
-              <input v-model="dateInput" placeholder="Yesterday" type="text" />
+              <br />and i need it done by
+              <input v-model="dateInput" placeholder="yesterday" type="text" />
             </p>
             <button
               @click="submitMessage"
@@ -34,12 +39,12 @@
             >
               <span class="sw-modal__content--submit-btn--span" v-if="!loading">
                 Contact studio woest
-                <!-- <img src="icons/sw-arrow-small.svg" alt=""/> -->
+                <img src="/icons/sw-arrow-small.svg" alt="" />
               </span>
               <span v-else>Loading...</span>
             </button>
             <div v-if="error" class="error-message">
-              <p>{{ error }}</p>
+              <p class="p">{{ error }}</p>
             </div>
           </div>
           <div v-else class="succes-message">
@@ -56,6 +61,12 @@
 </template>
 
 <style lang="scss" scoped>
+br {
+  margin-bottom: 200px;
+}
+.display-none {
+  display: none;
+}
 .sw-modal {
   position: relative;
 
@@ -63,6 +74,31 @@
     position: absolute;
     right: 24px;
     top: 24px;
+    height: 48px;
+    width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2px;
+    margin-top: 2px;
+    transition: 0.3s;
+
+    &:hover {
+      height: 52px;
+      width: 52px;
+      margin-right: 0px;
+      margin-top: 0px;
+    }
+
+    &--img {
+      transition: 0.3s;
+      width: 24px;
+    }
+
+    &:hover > img {
+      transition: 0.3s;
+      width: 20px;
+    }
   }
 
   &__inner {
@@ -70,17 +106,20 @@
     justify-content: center;
     position: fixed;
     z-index: 10;
-    max-width: 588px;
+    max-width: 620px;
     width: 100%;
     height: 100vh;
     background-color: #111;
     right: 0;
+    overflow: scroll;
+    border-left: solid 1px white;
   }
 
   &__content {
-    max-width: 500px;
+    max-width: 540px;
     width: 100%;
     height: 100%;
+    min-height: 900px;
     display: flex;
     transition: 0.3s;
     flex-direction: column;
@@ -88,23 +127,38 @@
     padding-left: 24px;
     padding-right: 24px;
     padding-top: 120px;
-    padding-bottom: 84px;
+    padding-bottom: 120px;
+    overflow: scroll;
+
+    @media (max-width: 480px) {
+      padding-top: 96px;
+      padding-bottom: 96px;
+    }
 
     input {
+      margin-bottom: 6px;
       &:nth-child(1) {
-        width: 230px;
-      }
-
-      &:nth-child(2) {
-        width: 340px;
+        width: 320px;
       }
 
       &:nth-child(3) {
-        width: 200px;
+        width: 478px;
       }
 
-      &:nth-child(4) {
-        width: 100px;
+      &:nth-child(5) {
+        width: 478px;
+      }
+
+      &:nth-child(7) {
+        width: 306px;
+      }
+
+      &:nth-child(9) {
+        width: 242px;
+      }
+
+      @media (max-width: 480px) {
+        width: 95% !important;
       }
     }
 
@@ -148,33 +202,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
-  background: var(--color);
-  width: 100%;
-  border-radius: 12px;
-  box-sizing: border-box;
-
-  h4 {
-    margin-bottom: 0px !important;
-    line-height: 20px;
-  }
+  transition: 0.3s;
 }
 
 .error-message {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
-  background: rgba(255, 0, 0, 0.1);
-  margin-top: 12px;
+  padding: 20px;
+  background: #433e74;
+  margin-top: 16px;
   border-radius: 12px;
   width: 100%;
   box-sizing: border-box;
-
-  p {
-    font-weight: bold;
-    margin-bottom: 0px !important;
-  }
+  transition: 0.3s;
 }
 </style>
 

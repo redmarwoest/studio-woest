@@ -44,7 +44,7 @@ onMounted(() => {
 
 <template>
   <div class="sw-loader--underlay">
-    <img src="/icons/sw-logo-normal.svg" alt="" />
+    <img src="/icons/sw-logo.svg" alt="" />
   </div>
   <div class="sw-loader">
     <div class="sw-loader__content">

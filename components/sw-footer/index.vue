@@ -4,7 +4,7 @@
   </div>
   <div class="sw-footer">
     <div class="sw-footer__logo">
-      <h4>Studio Woest</h4>
+      <img src="/icons/sw-logo.svg" alt="" />
     </div>
     <div class="sw-footer__contact">
       <h6>Availiability from the 1st of February</h6>
@@ -75,8 +75,8 @@ const animateFooterComponents = () => {
       duration: 1,
       scrollTrigger: {
         trigger: component,
-        start: "top 80%", // Adjust this value based on when you want the color change to start
-        end: "top 50%",
+        start: "top 100%", // Adjust this value based on when you want the color change to start
+        // end: "top 20%",
         scrub: true,
       },
     });
@@ -90,8 +90,8 @@ const handleBackgroundColor = () => {
     backgroundColor: "transparent", // Change to "transparent" to remove background color
     scrollTrigger: {
       trigger: ".sw-footer",
-      start: "top 80%", // Adjust this value based on when you want the color change to start
-      end: "top 20%",
+      start: "top 100%", // Adjust this value based on when you want the color change to start
+      // end: "top 20%",
       scrub: true,
     },
   });
@@ -162,6 +162,12 @@ onMounted(() => {
   flex-direction: column;
   box-sizing: border-box;
   background-color: #111;
+
+  &__logo {
+    img {
+      width: 140px;
+    }
+  }
 
   @media (max-width: 480px) {
     padding-bottom: 48px;

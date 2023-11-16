@@ -3,12 +3,12 @@
     <sw-component-contact-button
       class="sw-grid__contact"
     ></sw-component-contact-button>
-    <a class="sw-grid__osr sw-grid__container" id="osr-overlay">
+    <div class="sw-grid__osr sw-grid__container" id="osr-overlay">
       <img class="sw-grid__image" src="/img/woning2-1.webp" alt="" />
       <div class="sw-grid__osr--overlay sw-grid__overlay"></div>
-      <div class="sw-grid__animation">
+      <a class="sw-grid__animation">
         <div id="osr"></div>
-      </div>
+      </a>
       <div class="sw-grid__information">
         <div class="sw-grid__information--top">
           <div class="sw-grid__information--top-project">
@@ -27,7 +27,7 @@
           </div>
         </div>
       </div>
-    </a>
+    </div>
     <div class="sw-grid__title">
       <div class="sw-grid__title--container">
         <h2>Storytelling, Branding & Webdevelopment</h2>
@@ -351,7 +351,6 @@
 
   &__title {
     grid-area: title;
-    margin: 8px 8px 8px 24px;
     border-radius: 5px;
     display: flex;
     align-items: center;

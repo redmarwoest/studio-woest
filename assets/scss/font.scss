@@ -160,7 +160,21 @@ input {
     font-family: "Helvetica-Regular";
   }
 
-  &:focus {
+  /* Remove focus outline on all input elements */
+  input:focus {
+    outline: none;
+  }
+
+  /* Optional: If you want to maintain some styling for accessibility */
+  input::-moz-focus-inner {
+    border: none;
+  }
+
+  /* Optional: If you want to maintain some styling for accessibility */
+  input:focus::-webkit-inner-spin-button,
+  input:focus::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
     border: none;
   }
 
