@@ -42,6 +42,15 @@ const store = useModalStore();
 const openModal = () => {
   store.openModal({ component: innerModal });
 };
+
+onMounted(() => {
+  const tl = gsap.timeline();
+
+  tl.to(".marquee", {
+    y: 0, // Target vertical position
+    delay: 3.5,
+  });
+});
 </script>
 
 <style lang="scss">
@@ -54,6 +63,8 @@ const openModal = () => {
   height: 46px;
   border-bottom: 1px solid #fefce4;
   cursor: pointer;
+  transform: translateY(-25vh);
+  transition: transform 0.5s;
 
   &:hover .marquee__content {
     animation-play-state: paused;
@@ -77,7 +88,7 @@ li {
 }
 
 .marquee__content {
-  animation: scroll 45s linear infinite;
+  animation: scroll 60s linear infinite;
   flex-shrink: 0;
   display: flex;
   justify-content: space-around;

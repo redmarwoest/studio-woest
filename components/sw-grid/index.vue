@@ -6,14 +6,17 @@
     <div class="sw-grid__osr sw-grid__container" id="osr-overlay">
       <img class="sw-grid__image" src="/img/woning2-1.webp" alt="" />
       <div class="sw-grid__osr--overlay sw-grid__overlay"></div>
-      <a class="sw-grid__animation">
+      <a
+        href="https://www.osr-realestate.nl"
+        target="_blank"
+        class="sw-grid__animation"
+      >
         <div id="osr"></div>
       </a>
       <div class="sw-grid__information">
         <div class="sw-grid__information--top">
           <div class="sw-grid__information--top-project">
             <img src="/icons/sw-dot-icon.svg" alt="" />
-            <h4>LATEST PROJECT</h4>
             <h4>VISIT WEBSITE</h4>
           </div>
           <div><img src="/icons/sw-website-icon.svg" alt="" /></div>
@@ -33,15 +36,21 @@
         <h2>Storytelling, Branding & Webdevelopment</h2>
       </div>
     </div>
-    <a class="sw-grid__plnktn sw-grid__container" id="plnktn-overlay">
+    <div class="sw-grid__plnktn sw-grid__container" id="plnktn-overlay">
       <img class="sw-grid__image" src="/img/plnktn.png" alt="" />
       <div class="sw-grid__plnktn--overlay sw-grid__overlay"></div>
-      <div class="sw-grid__animation" id="osr">
+      <a
+        href="https://www.plnktn.com"
+        target="_blank"
+        class="sw-grid__animation"
+        id="osr"
+      >
         <div id="plnktn"></div>
-      </div>
+      </a>
       <div class="sw-grid__information">
         <div class="sw-grid__information--top">
           <div class="sw-grid__information--top-project">
+            <img src="/icons/sw-dot-icon.svg" alt="" />
             <h4>VISIT WEBSITE</h4>
           </div>
           <div><img src="/icons/sw-website-icon.svg" alt="" /></div>
@@ -55,16 +64,22 @@
           </div>
         </div>
       </div>
-    </a>
-    <a class="sw-grid__house sw-grid__container" id="house-overlay">
+    </div>
+    <div class="sw-grid__house sw-grid__container" id="house-overlay">
       <img class="sw-grid__image" src="/img/woning2-1.webp" alt="" />
       <div class="sw-grid__house--overlay sw-grid__overlay"></div>
-      <div class="sw-grid__animation" id="osr">
+      <a
+        href="https://www.houseoffamely.com"
+        target="_blank"
+        class="sw-grid__animation"
+        id="osr"
+      >
         <div id="house"></div>
-      </div>
+      </a>
       <div class="sw-grid__information">
         <div class="sw-grid__information--top">
           <div class="sw-grid__information--top-project">
+            <img src="/icons/sw-dot-icon.svg" alt="" />
             <h4 class="sw-grid__information--visit">VISIT WEBSITE</h4>
           </div>
           <div><img src="/icons/sw-website-icon.svg" alt="" /></div>
@@ -77,16 +92,22 @@
           </div>
         </div>
       </div>
-    </a>
-    <a class="sw-grid__gm sw-grid__container" id="gm-overlay">
+    </div>
+    <div class="sw-grid__gm sw-grid__container" id="gm-overlay">
       <img class="sw-grid__image" src="/img/woning2-1.webp" alt="" />
       <div class="sw-grid__gm--overlay sw-grid__overlay"></div>
-      <div class="sw-grid__animation" id="osr">
+      <a
+        href="https://www.gmcapital.nl"
+        target="_blank"
+        class="sw-grid__animation"
+        id="osr"
+      >
         <div id="gm"></div>
-      </div>
+      </a>
       <div class="sw-grid__information">
         <div class="sw-grid__information--top">
           <div class="sw-grid__information--top-project">
+            <img src="/icons/sw-dot-icon.svg" alt="" />
             <h4 class="sw-grid__information--visit">VISIT WEBSITE</h4>
           </div>
           <div><img src="/icons/sw-website-icon.svg" alt="" /></div>
@@ -100,7 +121,7 @@
           </div>
         </div>
       </div>
-    </a>
+    </div>
   </section>
 </template>
 
@@ -116,10 +137,6 @@
   .auto-hover-osr-overlay > .sw-grid__osr--overlay {
     background-color: #2f2f2f;
     opacity: 0.4;
-  }
-
-  .auto-hover-osr-overlay > .sw-grid__information--top-project {
-    opacity: 1;
   }
 
   .auto-hover-plnktn-overlay > .sw-grid__plnktn--overlay {
@@ -138,6 +155,10 @@
   }
 }
 
+.show {
+  opacity: 1 !important;
+}
+
 .sw-grid {
   display: grid;
   max-width: 1600px;
@@ -146,6 +167,7 @@
   gap: 16px;
   margin-left: 24px;
   margin-right: 24px;
+  transform: translateY(25vh);
   grid-template-areas:
     "osr osr osr osr osr osr osr osr osr contact"
     "osr osr osr osr osr osr osr osr osr contact"
@@ -214,9 +236,15 @@
       background-color: #433e74;
     }
 
-    &:hover > .sw-grid__osr--overlay {
-      background-color: #2f2f2f;
-      opacity: 0.4;
+    &:hover {
+      .sw-grid__information--top-project {
+        opacity: 1;
+      }
+
+      .sw-grid__osr--overlay {
+        background-color: #2f2f2f;
+        opacity: 40%;
+      }
     }
   }
 
@@ -231,13 +259,15 @@
       }
     }
 
-    &:hover > .sw-grid__plnktn--overlay-visit {
-      opacity: 100%;
-    }
+    &:hover {
+      .sw-grid__information--top-project {
+        opacity: 1;
+      }
 
-    &:hover > .sw-grid__plnktn--overlay {
-      background-color: #2f2f2f;
-      opacity: 40%;
+      .sw-grid__plnktn--overlay {
+        background-color: #2f2f2f;
+        opacity: 40%;
+      }
     }
   }
 
@@ -248,9 +278,15 @@
       background-color: #bc4f00;
     }
 
-    &:hover > .sw-grid__house--overlay {
-      background-color: #2f2f2f;
-      opacity: 0.4;
+    &:hover {
+      .sw-grid__information--top-project {
+        opacity: 1;
+      }
+
+      .sw-grid__house--overlay {
+        background-color: #2f2f2f;
+        opacity: 40%;
+      }
     }
   }
 
@@ -261,9 +297,15 @@
       background-color: #002a57;
     }
 
-    &:hover > .sw-grid__gm--overlay {
-      background-color: #2f2f2f;
-      opacity: 0.4;
+    &:hover {
+      .sw-grid__information--top-project {
+        opacity: 1;
+      }
+
+      .sw-grid__gm--overlay {
+        background-color: #2f2f2f;
+        opacity: 40%;
+      }
     }
   }
 
@@ -331,6 +373,7 @@
       &-project {
         display: flex;
         opacity: 0;
+        transition: 0.6s;
 
         img {
           margin-right: 12px;
@@ -381,12 +424,11 @@
 <script>
 import lottie from "lottie-web";
 import logoAnimation from "../../assets/animations/osr-animation.json";
-import boltAnimation from "../../assets/animations/bolt-animation.json";
 
 export default {
   data() {
     return {
-      animation: {}, // Store animations for each element
+      animations: {}, // Store animations for each element
       observer: null,
     };
   },
@@ -420,21 +462,28 @@ export default {
       animationOverlay.addEventListener("mouseleave", stopAnimation);
 
       // Store the animation for the current element
-      this.animation = animation;
+      this.animations[id] = animation;
     },
     handleIntersection(entries, observer) {
       entries.forEach((entry) => {
         const ids = entry.target.id;
+        const id = entry.target.id.replace("-overlay", "");
 
         if (entry.isIntersecting && entry.intersectionRatio >= 0.7) {
           entry.target.classList.add(`auto-hover-${ids}`);
           if (window.innerWidth < 1024) {
-            this.animation.play(); // Play the animation using the correct ID
+            entry.target
+              .querySelector(".sw-grid__information--top-project")
+              .classList.add("show");
+            this.animations[id].play(); // Play the animation using the correct ID
           }
         } else {
           entry.target.classList.remove(`auto-hover-${ids}`);
           if (window.innerWidth < 1024) {
-            this.animation.stop(); // Stop the animation using the correct ID
+            entry.target
+              .querySelector(".sw-grid__information--top-project")
+              .classList.remove("show");
+            this.animations[id].stop(); // Stop the animation using the correct ID
           }
         }
       });
@@ -444,7 +493,7 @@ export default {
     // Load Lottie animation for the specified element
     const osrContainer = document.getElementById("osr");
     const osrOverlay = document.getElementById("osr-overlay");
-    this.loadLottieAnimation(boltAnimation, osrContainer, osrOverlay, "osr");
+    this.loadLottieAnimation(logoAnimation, osrContainer, osrOverlay, "osr");
 
     const plnktnContainer = document.getElementById("plnktn");
     const plntknOverlay = document.getElementById("plnktn-overlay");
@@ -477,6 +526,13 @@ export default {
     const containerElements = document.querySelectorAll(".sw-grid__container");
     containerElements.forEach((element) => {
       this.observer.observe(element);
+    });
+
+    const tl = gsap.timeline();
+
+    tl.to(".sw-grid", {
+      y: 0, // Target vertical position
+      delay: 3.9,
     });
   },
   beforeDestroy() {

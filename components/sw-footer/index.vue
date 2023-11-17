@@ -69,14 +69,12 @@ const animateFooterComponents = () => {
 
   components.forEach((component) => {
     gsap.from(component, {
-      opacity: 0,
-      y: 30,
+      opacity: 0, // start with opacity 0 if you want it to fade in
+      y: 50,
       stagger: 0.2,
       duration: 1,
       scrollTrigger: {
-        trigger: component,
-        start: "top 100%", // Adjust this value based on when you want the color change to start
-        // end: "top 20%",
+        trigger: ".sw-footer__logo",
         scrub: true,
       },
     });
@@ -84,41 +82,20 @@ const animateFooterComponents = () => {
 };
 
 const handleBackgroundColor = () => {
-  const footer = document.querySelector(".sw-footer");
-
-  gsap.to(footer, {
-    backgroundColor: "transparent", // Change to "transparent" to remove background color
+  gsap.to(".sw-footer", {
+    backgroundColor: "rgba(17, 17, 17, 0)",
+    duration: 1, // adjust the duration as needed
     scrollTrigger: {
-      trigger: ".sw-footer",
-      start: "top 100%", // Adjust this value based on when you want the color change to start
-      // end: "top 20%",
+      trigger: ".sw-footer__logo",
+      end: "bottom top",
       scrub: true,
     },
   });
 };
 
-const reverseAnimations = () => {
-  gsap.to(
-    [".sw-footer__logo", ".sw-footer__contact", ".sw-footer__information"],
-    {
-      opacity: 0,
-      y: 30,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".sw-footer",
-        start: "top 80%",
-        end: "top 20%",
-        scrub: true,
-        toggleActions: "reverse",
-      },
-    }
-  );
-};
-
 onMounted(() => {
   animateFooterComponents();
   handleBackgroundColor();
-  reverseAnimations();
 });
 </script>
 
@@ -208,6 +185,7 @@ onMounted(() => {
   }
 
   &__contact {
+    text-align: center;
     h6 {
       margin-bottom: 24px;
       text-align: center;

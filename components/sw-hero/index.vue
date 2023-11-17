@@ -108,6 +108,10 @@
       @media (max-width: 480px) {
         margin-left: -28px;
       }
+
+      @media (max-width: 376px) {
+        margin-left: -28px;
+      }
     }
   }
 
