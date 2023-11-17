@@ -175,10 +175,11 @@
     }
 
     &--animation {
+      margin-left: 0;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 
       div {
-        height: 48px;
+        width: 240px;
         transform: translateY(115px);
         transition: transform 0.5s;
       }
