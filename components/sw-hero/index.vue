@@ -269,10 +269,10 @@ export default {
       .to(
         ".three-animation__letter",
         {
-          scale: 0,
+          opacity: 0,
           ease: "power4.out",
         },
-        4.3
+        6.7
       )
       .to(
         ".n",
