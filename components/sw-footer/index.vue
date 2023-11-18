@@ -17,13 +17,13 @@
     </div>
     <div class="sw-footer__information">
       <div class="sw-footer__location">
-        <!-- <div id="hourglass"><img src="icons/sw-bolt-small.svg" alt="" /></div> -->
+        <sw-component-loader-animation />
         <h4>Current Project</h4>
         <h6>Vendroid</h6>
         <h6>Branding | Custom development</h6>
       </div>
       <div class="sw-footer__location">
-        <div id="hourglass"></div>
+        <sw-component-weather-animation />
         <h4>Current Location</h4>
         <h6>Tamarindo | Costa Rica</h6>
         <h6>{{ getCurrentDateTime() }}</h6>
@@ -156,6 +156,7 @@ onMounted(() => {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
 
     @media (max-width: 480px) {
       justify-content: center;
@@ -164,6 +165,11 @@ onMounted(() => {
 
       div {
         text-align: center !important;
+        @media (max-width: 480px) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
 
         &:first-child {
           margin-bottom: 24px;
@@ -172,7 +178,16 @@ onMounted(() => {
     }
 
     div:last-child {
+      display: flex;
       text-align: end;
+      align-items: end;
+      flex-direction: column;
+
+      @media (max-width: 480px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
     }
 
     h4 {

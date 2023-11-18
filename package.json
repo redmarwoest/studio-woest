@@ -24,6 +24,7 @@
     "@pinia/nuxt": "^0.4.11",
     "@studio-freight/lenis": "^1.0.27",
     "@vueuse/core": "^10.3.0",
+    "axios": "^1.6.2",
     "googleapis": "^128.0.0",
     "gsap": "^3.12.2",
     "gsap-trial": "^3.12.2",

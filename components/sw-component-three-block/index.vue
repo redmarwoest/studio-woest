@@ -95,12 +95,54 @@ onMounted(() => {
   loop();
 });
 
+let rotationSpeed = 0.001; // Initial rotation speed
+let smoothTransition = 0.0002; // Speed for smooth transition
+
 const loop = () => {
-  box.rotation.x += 0.001; // Optional: Add rotation for visual interest
-  box.rotation.y += 0.001; // Optional: Add rotation for visual interest
+  const totalRotation = box.rotation.x + Math.PI; // Total rotation in radians
+
+  if (totalRotation < (Math.PI / 180) * 100) {
+    // Rotate slowly for the first 100 degrees
+    box.rotation.x += rotationSpeed;
+    box.rotation.y += rotationSpeed;
+  } else if (totalRotation < (Math.PI / 180) * (100 + 620)) {
+    // Smoothly transition to a faster speed for the next 620 degrees
+    rotationSpeed += smoothTransition;
+    box.rotation.x += rotationSpeed;
+    box.rotation.y += rotationSpeed;
+  } else if (totalRotation < (Math.PI / 180) * (100 + 620 + 100)) {
+    // Smoothly transition to a slower speed for the next 100 degrees
+    rotationSpeed -= smoothTransition;
+    box.rotation.x += rotationSpeed;
+    box.rotation.y += rotationSpeed;
+  } else if (totalRotation < Math.PI * 2) {
+    // Smoothly transition to a very slow speed after completing a full circle
+    rotationSpeed = 0.0001; // Adjust the speed for slow rotation
+    box.rotation.x += rotationSpeed;
+    box.rotation.y += rotationSpeed;
+  } else {
+    // Reset rotation speed to the initial slow speed and start over
+    rotationSpeed = 0.001;
+    box.rotation.x = 0;
+    box.rotation.y = 0;
+  }
+
   updateRenderer();
+
+  if (rotationSpeed > 0.001) {
+    // If in the fast round, gradually decrease the rotation speed
+    rotationSpeed *= 0.98; // Adjust the decay factor as needed
+  }
+
   requestAnimationFrame(loop);
 };
+
+// const loop = () => {
+//   box.rotation.x += 0.001; // Optional: Add rotation for visual interest
+//   box.rotation.y += 0.001; // Optional: Add rotation for visual interest
+//   updateRenderer();
+//   requestAnimationFrame(loop);
+// };
 </script>
 <template>
   <canvas ref="experience" />

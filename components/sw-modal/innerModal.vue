@@ -53,7 +53,7 @@
         </div>
         <div class="sw-modal__content--contact">
           <h5>+31 657 557 468</h5>
-          <h5>studio-woest@gmail.com</h5>
+          <h5>woest.studio@gmail.com</h5>
         </div>
       </div>
     </div>

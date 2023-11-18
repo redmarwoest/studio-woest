@@ -13,13 +13,13 @@ useHead({
   title: "Studio Woest",
   meta: [
     {
-      name: "Home house of famely",
-      content: "Luxury car essentials, on their way for your ride home",
+      name: "Home Studio WOest",
+      content: "Design Agency",
     },
   ],
   bodyAttrs: {
     class: "test",
   },
-  link: [{ rel: "icon", type: "image/svg", href: "/favicon.svg" }],
+  link: [{ rel: "icon", type: "image/svg", href: "/img/favicon.svg" }],
 });
 </script>

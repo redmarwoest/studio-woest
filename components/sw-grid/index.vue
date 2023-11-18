@@ -4,7 +4,7 @@
       class="sw-grid__contact"
     ></sw-component-contact-button>
     <div class="sw-grid__osr sw-grid__container" id="osr-overlay">
-      <img class="sw-grid__image" src="/img/woning2-1.webp" alt="" />
+      <img class="sw-grid__image" src="/img/osr.webp" alt="" />
       <div class="sw-grid__osr--overlay sw-grid__overlay"></div>
       <a
         href="https://www.osr-realestate.nl"
@@ -37,7 +37,7 @@
       </div>
     </div>
     <div class="sw-grid__plnktn sw-grid__container" id="plnktn-overlay">
-      <img class="sw-grid__image" src="/img/plnktn.png" alt="" />
+      <img class="sw-grid__image" src="/img/plnktn.webp" alt="" />
       <div class="sw-grid__plnktn--overlay sw-grid__overlay"></div>
       <a
         href="https://www.plnktn.com"
@@ -66,7 +66,7 @@
       </div>
     </div>
     <div class="sw-grid__house sw-grid__container" id="house-overlay">
-      <img class="sw-grid__image" src="/img/woning2-1.webp" alt="" />
+      <img class="sw-grid__image" src="/img/house.png" alt="" />
       <div class="sw-grid__house--overlay sw-grid__overlay"></div>
       <a
         href="https://www.houseoffamely.com"
@@ -94,7 +94,7 @@
       </div>
     </div>
     <div class="sw-grid__gm sw-grid__container" id="gm-overlay">
-      <img class="sw-grid__image" src="/img/woning2-1.webp" alt="" />
+      <img class="sw-grid__image" src="/img/gm.webp" alt="" />
       <div class="sw-grid__gm--overlay sw-grid__overlay"></div>
       <a
         href="https://www.gmcapital.nl"
@@ -136,27 +136,31 @@
 
   .auto-hover-osr-overlay > .sw-grid__osr--overlay {
     background-color: #2f2f2f;
-    opacity: 0.4;
+    opacity: 0.2;
   }
 
   .auto-hover-plnktn-overlay > .sw-grid__plnktn--overlay {
     background-color: #2f2f2f;
-    opacity: 0.4;
+    opacity: 0.2;
   }
 
   .auto-hover-house-overlay > .sw-grid__house--overlay {
     background-color: #2f2f2f;
-    opacity: 0.4;
+    opacity: 0.1;
   }
 
   .auto-hover-gm-overlay > .sw-grid__gm--overlay {
     background-color: #2f2f2f;
-    opacity: 0.4;
+    opacity: 0.1;
   }
 }
 
 .show {
   opacity: 1 !important;
+}
+
+#plnktn {
+  width: 200px;
 }
 
 .sw-grid {
@@ -243,7 +247,7 @@
 
       .sw-grid__osr--overlay {
         background-color: #2f2f2f;
-        opacity: 40%;
+        opacity: 20%;
       }
     }
   }
@@ -255,7 +259,8 @@
       background-color: #0e3100;
 
       &-visit {
-        opacity: 0;
+        background-color: #2f2f2f;
+        opacity: 0.2;
       }
     }
 
@@ -265,8 +270,7 @@
       }
 
       .sw-grid__plnktn--overlay {
-        background-color: #2f2f2f;
-        opacity: 40%;
+        opacity: 0%;
       }
     }
   }
@@ -285,7 +289,7 @@
 
       .sw-grid__house--overlay {
         background-color: #2f2f2f;
-        opacity: 40%;
+        opacity: 10%;
       }
     }
   }
@@ -304,7 +308,7 @@
 
       .sw-grid__gm--overlay {
         background-color: #2f2f2f;
-        opacity: 40%;
+        opacity: 10%;
       }
     }
   }
@@ -424,6 +428,9 @@
 <script>
 import lottie from "lottie-web";
 import logoAnimation from "../../assets/animations/osr-animation.json";
+import plnktnAnimation from "../../assets/animations/plnktn-animation.json";
+import houseAnimation from "../../assets/animations/house-animation.json";
+import gmAnimation from "../../assets/animations/gm-animation.json";
 
 export default {
   data() {
@@ -498,7 +505,7 @@ export default {
     const plnktnContainer = document.getElementById("plnktn");
     const plntknOverlay = document.getElementById("plnktn-overlay");
     this.loadLottieAnimation(
-      logoAnimation,
+      plnktnAnimation,
       plnktnContainer,
       plntknOverlay,
       "plnktn"
@@ -507,7 +514,7 @@ export default {
     const houseContainer = document.getElementById("house");
     const houseOverlay = document.getElementById("house-overlay");
     this.loadLottieAnimation(
-      logoAnimation,
+      houseAnimation,
       houseContainer,
       houseOverlay,
       "house"
@@ -515,7 +522,7 @@ export default {
 
     const gmContainer = document.getElementById("gm");
     const gmOverlay = document.getElementById("gm-overlay");
-    this.loadLottieAnimation(logoAnimation, gmContainer, gmOverlay, "gm");
+    this.loadLottieAnimation(gmAnimation, gmContainer, gmOverlay, "gm");
 
     // Initialize Intersection Observer
     this.observer = new IntersectionObserver(this.handleIntersection, {
