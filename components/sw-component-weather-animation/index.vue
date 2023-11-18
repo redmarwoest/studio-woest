@@ -40,8 +40,6 @@ export default {
           },
         });
 
-        console.log(response.data.current.condition.text);
-
         const isNight = response.data.current.is_day === "no";
 
         let animationData;

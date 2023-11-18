@@ -88,7 +88,7 @@ li {
 }
 
 .marquee__content {
-  animation: scroll 60s linear infinite;
+  animation: scroll 120s linear infinite;
   flex-shrink: 0;
   display: flex;
   justify-content: space-around;

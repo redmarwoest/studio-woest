@@ -33,6 +33,8 @@
     "pinia": "^2.1.6",
     "split-type": "^0.3.4",
     "three": "^0.155.0",
+    "three-gltf-loader": "^1.111.0",
+    "three.meshline": "^1.4.0",
     "vue-marquee-text-component": "^2.0.1"
   },
   "overrides": {

@@ -9,7 +9,7 @@
           <h1>
             <div class="text-animation__sentence">
               <div class="text-animation__sentence--word">
-                <div>
+                <div class="first-animation">
                   <span>C</span><span>r</span><span>a</span><span>f</span
                   ><span>t</span><span>i</span><span>n</span><span>g</span>
                 </div>
@@ -32,16 +32,15 @@
             <div class="text-animation__sentence">
               <div class="text-animation__sentence--word">
                 <div>
-                  <span>e</span><span>x</span><span>p</span><span>e</span
-                  ><span>r</span><span>i</span>
+                  <span>e</span><span>x</span><span>p</span>
                   <span class="three-animation">
                     <span class="three-animation__letter">e</span>
                     <span class="three-animation__3d"
                       ><sw-component-three-block
-                    /></span>
-                  </span>
-                  <span class="n">n</span><span>c</span><span>e</span
-                  ><span>s</span>
+                    /></span> </span
+                  ><span class="n">r</span><span>i</span>
+                  <span>e</span>
+                  <span>n</span><span>c</span><span>e</span><span>s</span>
                 </div>
               </div>
               <div class="text-animation__sentence--word">
@@ -54,7 +53,8 @@
               <div class="text-animation__sentence--word">
                 <div>
                   <span>c</span><span>o</span><span>n</span><span>v</span
-                  ><span>e</span><span>r</span><span>t</span>.
+                  ><span class="animation-e">e</span><span>r</span
+                  ><span>t</span>.
                 </div>
               </div>
             </div>
@@ -70,6 +70,8 @@
   &__animation {
     position: absolute;
     opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.05s;
     svg {
       margin-left: -36px;
       width: 64px !important;
@@ -196,6 +198,7 @@
 import lottie from "lottie-web";
 import logoAnimation from "../../assets/animations/logo-animation.json";
 import boltAnimation from "../../assets/animations/bolt-animation.json";
+import { TweenMax } from "gsap";
 
 export default {
   methods: {
@@ -218,6 +221,14 @@ export default {
 
     const tl = gsap.timeline();
 
+    const split = document.querySelectorAll(".first-animation span");
+
+    // Extract individual letters from the NodeList
+    const letters = Array.from(split);
+
+    // Use gsap.utils.toArray to create an array of elements
+    const splitArray = gsap.utils.toArray(letters);
+
     tl.to(".sw-hero__content--animation div", {
       y: 0,
       stagger: 0.1,
@@ -230,25 +241,56 @@ export default {
         delay: 0.5,
         duration: 0.15,
       })
-      .to(".three-animation__letter", {
-        opacity: 0,
-      })
-      .to(".n", {
-        marginLeft: "12px",
-      })
-      .to(".three-animation__3d", {
-        opacity: 1,
-        ease: "power2.in",
-      })
       .to(".svg-animation__letter", {
+        delay: 0.5,
         opacity: 0,
+        ease: "elastic.out(1,0.2)",
       })
       .to(".g", {
         marginLeft: "24px",
+        ease: "elastic.out(1,0.1)",
       })
-      .to(".svg-animation__animation", {
+      .to(".svg-animation__letter", {
+        delay: 0.5,
+        opacity: 0,
+        rotationY: 180, // Add this line to rotate on the Y-axis
+        ease: "elastic.out(1,0.2)",
+      })
+      .to(
+        ".svg-animation__animation",
+        {
+          duration: 0.1,
+          y: 0,
+          opacity: 1,
+          ease: "power4.out",
+        },
+        5.3
+      )
+      .to(
+        ".three-animation__letter",
+        {
+          scale: 0,
+          ease: "power4.out",
+        },
+        4.3
+      )
+      .to(
+        ".n",
+        {
+          marginLeft: "12px",
+          ease: "elastic.out(1,0.2)",
+        },
+        6.8
+      )
+      .to(".three-animation__3d", {
         opacity: 1,
-        ease: "power2.in",
+        scale: 1,
+        ease: "power4.out",
+      })
+      .to(".animation-e", {
+        delay: 6,
+        rotateX: 540,
+        rotateY: 10,
       });
   },
 };

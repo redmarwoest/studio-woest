@@ -3,12 +3,14 @@ import {
   Scene,
   PerspectiveCamera,
   Mesh,
-  BoxGeometry, // Change: BoxGeometry instead of SphereGeometry
+  OctahedronGeometry,
   MeshStandardMaterial,
   WebGLRenderer,
   AmbientLight,
   DirectionalLight,
+  OrthographicCamera,
 } from "three";
+
 import { ref, computed, watch, onMounted } from "vue";
 import { type Ref } from "vue";
 
@@ -22,25 +24,26 @@ const aspectRatio = computed(() => 24 / 24);
 
 const scene = new Scene();
 
-const camera = new PerspectiveCamera(75, aspectRatio.value, 0.1, 1000);
-camera.position.set(0, 0, 1.4);
+const camera = new OrthographicCamera(-1, 1, 1, -1, 0.05, 10); // Adjust the parameters as needed
+camera.position.set(0, 0, 3);
 
 scene.add(camera);
 
-const box = new Mesh( // Change: BoxGeometry instead of SphereGeometry
-  new BoxGeometry(1, 1, 1), // Change: BoxGeometry instead of SphereGeometry
-  new MeshStandardMaterial({ color: 0x008080 })
-);
+const geometry = new OctahedronGeometry(1); // Use OctahedronGeometry instead of BoxGeometry
 
-scene.add(box);
+const material = new MeshStandardMaterial({ color: 0xd127cb });
+let mesh: Mesh;
+
+mesh = new Mesh(geometry, material);
+scene.add(mesh);
 
 // Ambient light
 const ambientLight = new AmbientLight(0xffffff, 0.5); // color, intensity (0 to 1)
 scene.add(ambientLight);
 
 // Directional light
-const directionalLight = new DirectionalLight(0xffffff, 1);
-directionalLight.position.set(5, 5, 5); // Set the position of the light
+const directionalLight = new DirectionalLight(0xffffff, 3);
+directionalLight.position.set(10, 10, 10); // Set the position of the light
 scene.add(directionalLight);
 
 function updateCamera() {
@@ -92,42 +95,26 @@ watch(aspectRatio, () => {
 
 onMounted(() => {
   setRenderer();
+  mesh.scale.set(0.85, 0.85, 0.85);
   loop();
 });
 
 let rotationSpeed = 0.001; // Initial rotation speed
 let smoothTransition = 0.0002; // Speed for smooth transition
 
+let time = 0; // Add a time variable for the animation
+
+// Modify the loop function
 const loop = () => {
-  const totalRotation = box.rotation.x + Math.PI; // Total rotation in radians
-
-  if (totalRotation < (Math.PI / 180) * 100) {
-    // Rotate slowly for the first 100 degrees
-    box.rotation.x += rotationSpeed;
-    box.rotation.y += rotationSpeed;
-  } else if (totalRotation < (Math.PI / 180) * (100 + 620)) {
-    // Smoothly transition to a faster speed for the next 620 degrees
-    rotationSpeed += smoothTransition;
-    box.rotation.x += rotationSpeed;
-    box.rotation.y += rotationSpeed;
-  } else if (totalRotation < (Math.PI / 180) * (100 + 620 + 100)) {
-    // Smoothly transition to a slower speed for the next 100 degrees
-    rotationSpeed -= smoothTransition;
-    box.rotation.x += rotationSpeed;
-    box.rotation.y += rotationSpeed;
-  } else if (totalRotation < Math.PI * 2) {
-    // Smoothly transition to a very slow speed after completing a full circle
-    rotationSpeed = 0.0001; // Adjust the speed for slow rotation
-    box.rotation.x += rotationSpeed;
-    box.rotation.y += rotationSpeed;
-  } else {
-    // Reset rotation speed to the initial slow speed and start over
-    rotationSpeed = 0.001;
-    box.rotation.x = 0;
-    box.rotation.y = 0;
-  }
-
+  const totalRotation = 360; // Total rotation in radians
   updateRenderer();
+
+  // Use sine function to create a jumping effect
+  mesh.position.y = Math.sin(time) * 0.1; // You can adjust the amplitude (0.5 in this case)
+
+  mesh.rotation.y += rotationSpeed;
+
+  time += 0.01; // Adjust the speed of the jumping effect
 
   if (rotationSpeed > 0.001) {
     // If in the fast round, gradually decrease the rotation speed
@@ -136,13 +123,6 @@ const loop = () => {
 
   requestAnimationFrame(loop);
 };
-
-// const loop = () => {
-//   box.rotation.x += 0.001; // Optional: Add rotation for visual interest
-//   box.rotation.y += 0.001; // Optional: Add rotation for visual interest
-//   updateRenderer();
-//   requestAnimationFrame(loop);
-// };
 </script>
 <template>
   <canvas ref="experience" />

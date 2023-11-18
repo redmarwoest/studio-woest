@@ -17,9 +17,7 @@ serviceAccountAuth.authorize((err, tokens) => {
 });
 
 async function appendEmail(emailObject: any) {
-  console.log(emailObject, "object");
   const email = emailObject.information.email;
-  console.log(email);
   return new Promise((resolve, reject) => {
     sheets.spreadsheets.values.append(
       {
@@ -54,7 +52,6 @@ async function appendEmail(emailObject: any) {
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
-  console.log(body);
   await appendEmail(body);
   return {
     statusCode: 200,

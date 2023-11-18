@@ -17,7 +17,7 @@
         <div class="sw-grid__information--top">
           <div class="sw-grid__information--top-project">
             <img src="/icons/sw-dot-icon.svg" alt="" />
-            <h4>VISIT WEBSITE</h4>
+            <h4>Visit Website</h4>
           </div>
           <div><img src="/icons/sw-website-icon.svg" alt="" /></div>
         </div>
@@ -51,7 +51,7 @@
         <div class="sw-grid__information--top">
           <div class="sw-grid__information--top-project">
             <img src="/icons/sw-dot-icon.svg" alt="" />
-            <h4>VISIT WEBSITE</h4>
+            <h4>Visit Website</h4>
           </div>
           <div><img src="/icons/sw-website-icon.svg" alt="" /></div>
         </div>
@@ -80,7 +80,7 @@
         <div class="sw-grid__information--top">
           <div class="sw-grid__information--top-project">
             <img src="/icons/sw-dot-icon.svg" alt="" />
-            <h4 class="sw-grid__information--visit">VISIT WEBSITE</h4>
+            <h4 class="sw-grid__information--visit">Visit Website</h4>
           </div>
           <div><img src="/icons/sw-website-icon.svg" alt="" /></div>
         </div>
@@ -108,7 +108,7 @@
         <div class="sw-grid__information--top">
           <div class="sw-grid__information--top-project">
             <img src="/icons/sw-dot-icon.svg" alt="" />
-            <h4 class="sw-grid__information--visit">VISIT WEBSITE</h4>
+            <h4 class="sw-grid__information--visit">Visit Website</h4>
           </div>
           <div><img src="/icons/sw-website-icon.svg" alt="" /></div>
         </div>
@@ -422,6 +422,10 @@
       }
     }
   }
+}
+
+#gm {
+  width: 240px;
 }
 </style>
 
