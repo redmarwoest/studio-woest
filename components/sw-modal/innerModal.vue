@@ -263,7 +263,7 @@ const submitMessage = async () => {
 
   loading.value = true;
 
-  successMessage.value = `Hi, ${nameInput} thank you for sending us a message about your inquiry about '${inquiryInput}'. We will send you a message on '${emailInput}' greetings studio woest`;
+  successMessage.value = `Hi, ${nameInput} thank you for sending us a message about your inquiry about '${inquiryInput}'. We will send you a message on '${emailInput}' greetings studio woest!`;
 
   try {
     const response = await useFetch("/api/email", {
@@ -275,7 +275,7 @@ const submitMessage = async () => {
     });
 
     if (response) {
-      successMessage.value = `Hi, ${nameInput} thank you for sending us a message about your inquiry about '${inquiryInput}'. We will send you a message on '${emailInput}' greetings studio woest`;
+      successMessage.value = `Hi, ${nameInput} thank you for sending us a message about your inquiry about '${inquiryInput}'. We will send you a message on '${emailInput}' greetings studio woest!`;
       success.value = true;
     } else {
       error.value = "Error submitting email";

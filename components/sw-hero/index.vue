@@ -99,6 +99,8 @@
   &__3d {
     position: absolute;
     opacity: 0;
+    transform: translateY(40px);
+    transition: transform 0.1s;
 
     canvas {
       margin-left: -72px;
@@ -198,7 +200,9 @@
 import lottie from "lottie-web";
 import logoAnimation from "../../assets/animations/logo-animation.json";
 import boltAnimation from "../../assets/animations/bolt-animation.json";
-import { TweenMax } from "gsap";
+import CustomEase from "gsap/CustomEase";
+
+gsap.registerPlugin(CustomEase);
 
 export default {
   methods: {
@@ -244,17 +248,17 @@ export default {
       .to(".svg-animation__letter", {
         delay: 0.5,
         opacity: 0,
-        ease: "elastic.out(1,0.2)",
+        ease: "elastic.out(1,0.3)",
       })
       .to(".g", {
         marginLeft: "24px",
-        ease: "elastic.out(1,0.1)",
+        ease: "elastic.out(1,0.4)",
       })
       .to(".svg-animation__letter", {
         delay: 0.5,
         opacity: 0,
         rotationY: 180, // Add this line to rotate on the Y-axis
-        ease: "elastic.out(1,0.2)",
+        ease: "elastic.out(1,0.5)",
       })
       .to(
         ".svg-animation__animation",
@@ -270,7 +274,7 @@ export default {
         ".three-animation__letter",
         {
           opacity: 0,
-          ease: "power4.out",
+          ease: CustomEase.create("custom", "M0,0 C0.716,0 0.801,1.438 1,1 "),
         },
         6.7
       )
@@ -284,6 +288,7 @@ export default {
       )
       .to(".three-animation__3d", {
         opacity: 1,
+        y: 0,
         scale: 1,
         ease: "power4.out",
       })
